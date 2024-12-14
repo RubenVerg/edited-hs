@@ -59,7 +59,7 @@ library
     import:           warnings
 
     -- Modules exported by the library.
-    exposed-modules:  MyLib
+    exposed-modules:  System.Console.Edited
 
     -- Modules included in this library but not exported.
     -- other-modules:
@@ -75,6 +75,42 @@ library
 
     -- Base language which the package is written in.
     default-language: GHC2024
+
+    c-sources:        libedited/src/chared.c
+                    , libedited/src/chartype.c
+                    , libedited/src/common.c
+                    , libedited/src/el.c
+                    , libedited/src/eln.c
+                    , libedited/src/emacs.c
+                    , libedited/src/filecomplete.c
+                    , libedited/src/hist.c
+                    , libedited/src/history.c
+                    , libedited/src/historyn.c
+                    , libedited/src/keymacro.c
+                    , libedited/src/literal.c
+                    , libedited/src/map.c
+                    , libedited/src/parse.c
+                    , libedited/src/prompt.c
+                    , libedited/src/read.c
+                    , libedited/src/readline.c
+                    , libedited/src/refresh.c
+                    , libedited/src/search.c
+                    , libedited/src/sig.c
+                    , libedited/src/strlcpy.c
+                    , libedited/src/style.c
+                    , libedited/src/terminal.c
+                    , libedited/src/tokenizer.c
+                    , libedited/src/tokenizern.c
+                    , libedited/src/tty.c
+                    , libedited/src/unvis.c
+                    , libedited/src/vi.c
+                    , libedited/src/vis.c
+    cc-options:       -Wno-unused-result
+    c-sources:        cbits/HsEdited.c
+    include-dirs:     include libedited/src libedited
+    includes:         HsEdited.h
+    install-includes: HsEdited.h
+    extra-libraries:  ncurses
 
 executable edited
     -- Import common warning flags.
@@ -92,6 +128,7 @@ executable edited
     -- Other library packages from which modules are imported.
     build-depends:
         base ^>=4.20.0.0,
+        haskell-lexer ^>=1.1.2,
         edited
 
     -- Directories containing source files.

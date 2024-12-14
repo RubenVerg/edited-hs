@@ -1,0 +1,3 @@
+[submodule "libedited"]
+	path = libedited
+	url = https://github.com/RubenVerg/libedited.git
