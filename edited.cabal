@@ -49,7 +49,7 @@ build-type:         Simple
 extra-doc-files:    CHANGELOG.md
 
 -- Extra source files to be distributed with the package, such as examples, or a tutorial module.
--- extra-source-files:
+extra-source-files: app/Main.hs
 
 common warnings
     ghc-options: -Wall
@@ -112,28 +112,3 @@ library
     install-includes: HsEdited.h
     install-includes: config.h edited/chared.h edited/chartype.h edited/common.h edited/edited.h edited/el.h edited/emacs.h edited/fcns.h edited/filecomplete.h edited/func.h edited/help.h edited/hist.h edited/keymacro.h edited/literal.h edited/map.h edited/parse.h edited/prompt.h edited/read.h edited/readline.h edited/refresh.h edited/search.h edited/sig.h edited/style.h edited/sys.h edited/terminal.h edited/tty.h edited/vi.h edited/vis.h
     extra-libraries:  ncurses
-
-executable edited
-    -- Import common warning flags.
-    import:           warnings
-
-    -- .hs or .lhs file containing the Main module.
-    main-is:          Main.hs
-
-    -- Modules included in this executable, other than Main.
-    -- other-modules:
-
-    -- LANGUAGE extensions used by modules in this package.
-    -- other-extensions:
-
-    -- Other library packages from which modules are imported.
-    build-depends:
-        base ^>=4.20.0.0,
-        haskell-lexer ^>=1.1.2,
-        edited
-
-    -- Directories containing source files.
-    hs-source-dirs:   app
-
-    -- Base language which the package is written in.
-    default-language: GHC2024
