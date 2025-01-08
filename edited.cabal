@@ -20,7 +20,7 @@ name:               edited
 -- PVP summary:     +-+------- breaking API changes
 --                  | | +----- non-breaking API additions
 --                  | | | +--- code changes with no API change
-version:            0.1.0.0
+version:            0.1.1.0
 
 -- A short (one-line) description of the package.
 synopsis:           A wrapper around libedited, a fork of libedit
@@ -110,6 +110,7 @@ library
     include-dirs:     include libedited/src libedited
     includes:         HsEdited.h
     install-includes: HsEdited.h
+    install-includes: config.h edited/chared.h edited/chartype.h edited/common.h edited/edited.h edited/el.h edited/emacs.h edited/fcns.h edited/filecomplete.edited/func.h edited/help.h edited/hist.h edited/keymacro.h edited/literal.h edited/map.h edited/parse.h edited/prompt.h edited/read.h edited/readline.h edited/refresh.h edited/search.h edited/sig.h edited/style.h edited/sys.h edited/terminal.h edited/tty.h edited/vi.h edited/vis.h
     extra-libraries:  ncurses
 
 executable edited
