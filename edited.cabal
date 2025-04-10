@@ -74,7 +74,7 @@ library
     hs-source-dirs:   src
 
     -- Base language which the package is written in.
-    default-language: GHC2024
+    default-language: GHC2021
 
     c-sources:        libedited/src/chared.c
                     , libedited/src/chartype.c

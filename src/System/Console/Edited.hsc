@@ -1,4 +1,4 @@
-{-# Language EmptyDataDecls #-}
+{-# Language EmptyDataDecls, LambdaCase #-}
 
 module System.Console.Edited
   ( Edited
