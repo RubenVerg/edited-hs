@@ -1,0 +1,13 @@
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+libdir=@libdir@
+includedir=@includedir@
+
+Name: libedited
+Description: extension of libedit, providing command line input.
+Version: @VERSION@
+Requires:
+Libs: -L${libdir} -ledited
+Libs.private: @LIBS@
+Cflags: -I${includedir}/edited
+
